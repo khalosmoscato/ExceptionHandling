@@ -8,6 +8,16 @@ namespace ExceptionHandlingExercises
     {
         public static int Divide(int a, int b)
         {
+            List<int> negatives = new List<int>();
+            
+            if (a < 0) { negatives.Add(a); }
+            if (b < 0) { negatives.Add(b); }
+
+            if (negatives.Count() > 0)
+            {
+                throw new NegativeIntegerInputException(negatives);
+            }
+
             return a / b;
         }
         public static void DivideUserInputs()
@@ -29,6 +39,10 @@ namespace ExceptionHandlingExercises
                 {
                     Console.WriteLine("Cannot divide by zero. Please try again.");
                 }
+                //catch (NegativeIntegerInputException e)
+                //{
+                //    Console.WriteLine($"{e.Message} []");
+                //}
 
             }
         }

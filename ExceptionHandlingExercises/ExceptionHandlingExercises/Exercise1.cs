@@ -25,6 +25,11 @@ namespace ExceptionHandlingExercises
                 {
                     Console.WriteLine("Invalid input. Please try again.");
                 }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine("Cannot divide by zero. Please try again.");
+                }
+
             }
         }
         private static int[] GetUserInputs()
